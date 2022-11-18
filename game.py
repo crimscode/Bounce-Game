@@ -10,9 +10,7 @@ class Bricks:
         self.canvas = canvas
         self.id = canvas.create_oval(5, 5, 25, 25, fill=color, width=2)
         
-
 playing = False
-
 
 def start_game(event):
     global playing
@@ -29,7 +27,7 @@ def start_game(event):
                        "DodgerBlue4", "wheat2", "RosyBrown2", "bisque3", "DarkSeaGreen1"]
         random.shuffle(BALL_COLOR)
         # Colour of the paddle
-        paddle = Paddle(canvas, "blue")
+        paddle = Paddle(canvas, "red")
         bricks = []
         for i in range(0, 5):
             b = []
@@ -61,9 +59,9 @@ def start_game(event):
                     root.update_idletasks()
                     root.update()
                     time.sleep(0.01)
-                    if ball.hit==95:
+                    if ball.hit == 95:
                         # You won message and colour
-                        canvas.create_text(250, 250, text="YOU WON !!", fill="yellow", font="Consolas 24 ")
+                        canvas.create_text(250, 250, text="YOU WON !!", fill="yellow", font="Consolas 24")
                         root.update_idletasks()
                         root.update()
                         playing = False
